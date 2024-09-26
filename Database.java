@@ -17,13 +17,11 @@ public class Database {
   // Make sure to set the name within r to rname.
   // return true on successful add; false otherwise
   public boolean addRelation(String rname, Relation r) {
-	  if(relations.containsValue(r)){
-		 return false; 
+	  if(!relations.containsValue(r)){
+		 relations.put(rname,r);
+		 return true; 
 	  }
-	  else {
-		  relations.put(rname,r);
-		  return true; 
-	  }
+	  return false;
   }
 
   // Delete relation with name rname from HashMap
@@ -33,20 +31,13 @@ public class Database {
 		  relations.remove(rname);
 		  return true;
 	  }
-	  else {
-		  return false;
-	  }
+	  return false;
   }
 
   // Return true if relation with name rname exists in HashMap
   // false otherwise
   public boolean relationExists(String rname) {
-	  if(relations.containsKey(rname)){
-		 return true; 
-	  }
-	  else {
-		  return false;
-	  }
+	  return relations.containsKey(rname);
   }
 
   // Retrieve and return relation with name rname from HashMap;
@@ -54,10 +45,8 @@ public class Database {
   public Relation getRelation (String rname) {
 	  if(relations.containsKey(rname)){
 			 return relations.get(rname); 
-		  }
-	  else {
-		  return null;
 	  }
+	  return null;
   }
 
   // Print database schema to screen.

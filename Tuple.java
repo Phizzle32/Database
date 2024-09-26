@@ -31,12 +31,7 @@ public class Tuple {
   
   //Return true if this tuple is equal to compareTuple; false otherwise
   public boolean equals(Tuple compareTuple) {
-	  if(compareTuple.toString().equals(this.toString())){
-		  return true; 
-	  }
-	  else {
-		  return false;
-	  }
+	  return compareTuple.toString().equals(this.toString());
   }
   
   //Clone tuple object

@@ -26,12 +26,7 @@ public class Relation {
   // returns true if attribute with name aname exists in relation schema
   // false otherwise
   public boolean attributeExists(String aname) {
-	  if(attributes.contains(aname)){
-		  return true;
-	  }
-	  else {
-		  return false;
-	  }
+	  return attributes.contains(aname);
   }
 
   // returns domain type of attribute aname; return null if not present
@@ -40,10 +35,7 @@ public class Relation {
 		  int x = attributes.indexOf(aname);
 		  return domains.get(x);
 	  }
-	  else {
-		  return null;
-	  }
-	  
+	  return null;
   }
 
   // Print relational schema to screen.
@@ -90,12 +82,7 @@ public class Relation {
   
   //returns true if tuple t is present in relation and false otherwise.
   private boolean member(Tuple t) {
-	  if(table.contains(t)) {
-		  return true;
-	  }
-	  else {
-		  return false;
-	  }
+	  return table.contains(t);
   }
   
   //returns the union of two relations
